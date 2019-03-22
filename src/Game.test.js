@@ -65,3 +65,19 @@ it("does not allow re-scoring", function() {
 
     expect(wrapper.state().scores.ones).toEqual(1);
 });
+
+// test that box can't be clicked before initial roll
+it("does not allow box click before initial roll", function() {
+    let die = wrapper.find(".Die").first();
+    die.simulate("click");
+
+    expect(die.html()).not.toContain("Die-locked");
+});
+
+// test that list can't be clicked before initial roll
+it("does not allow list click before initial roll", function() {
+    let scoreRow = wrapper.find(".RuleRow-name").first();
+    scoreRow.simulate("click");
+
+    expect(wrapper.state().scores.ones).toEqual(undefined);
+});
