@@ -70,15 +70,15 @@ class FullHouse extends Rule {
 
 class SmallStraight extends Rule {
   evalRoll = (dice) => {
-    const diceSet = new Set(dice);
-    // obj with possible wins and test against
+    const diceArr = Array.from(new Set(dice));
+    diceArr.sort(function(a,b) {return a-b});
+    const diceStr = diceArr.join();
 
-    if (diceSet.size >= 4 && diceSet.has(3) && diceSet.has(4)) {
-      if (diceSet.has(1) && diceSet.has(2)){
-        return this.score;
-      } else if (diceSet.has(2) && diceSet.has(5)){
-        return this.score;
-      } else if (diceSet.has(5) && diceSet.has(6)){
+    // obj with possible wins and test against
+    const winArr = ['1,2,3,4', '2,3,4,5', '3,4,5,6']
+
+    for(let win of winArr){
+      if (diceStr.includes(win)){
         return this.score;
       }
     }
@@ -95,8 +95,8 @@ class LargeStraight extends Rule {
 
     // large straight must be 5 different dice & only one can be a 1 or a 6
 
-    // make const
-    return d.size === 5 && (!d.has(1) || !d.has(6)) ? this.score : 0;
+    const isLargeStaight = d.size === 5 && (!d.has(1) || !d.has(6));
+    return isLargeStaight ? this.score : 0;
   }
 }
 
