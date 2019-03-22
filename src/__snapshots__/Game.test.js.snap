@@ -6,10 +6,10 @@ exports[`matches snapshot 1`] = `
     <Dice
       dice={
         Array [
+          1,
           2,
-          2,
-          2,
-          6,
+          3,
+          4,
           5,
         ]
       }
@@ -32,13 +32,13 @@ exports[`matches snapshot 1`] = `
           idx={0}
           key="0"
           locked={false}
-          val={2}
+          val={1}
         >
           <button
             className="Die"
             onClick={[Function]}
           >
-            2
+            1
           </button>
         </Die>
         <Die
@@ -60,13 +60,13 @@ exports[`matches snapshot 1`] = `
           idx={2}
           key="2"
           locked={false}
-          val={2}
+          val={3}
         >
           <button
             className="Die"
             onClick={[Function]}
           >
-            2
+            3
           </button>
         </Die>
         <Die
@@ -74,13 +74,13 @@ exports[`matches snapshot 1`] = `
           idx={3}
           key="3"
           locked={false}
-          val={6}
+          val={4}
         >
           <button
             className="Die"
             onClick={[Function]}
           >
-            6
+            4
           </button>
         </Die>
         <Die

@@ -16,6 +16,7 @@ beforeEach(function(){
 
 // snapshot test
 it("matches snapshot", function () {
+    wrapper.setState({ dice: [1, 2, 3, 4, 5] })
     let serialized = toJson(wrapper);
     expect(serialized).toMatchSnapshot();
 });
@@ -67,17 +68,17 @@ it("does not allow re-scoring", function() {
 });
 
 // test that box can't be clicked before initial roll
-it("does not allow box click before initial roll", function() {
+it("locks die when clicked", function() {
     let die = wrapper.find(".Die").first();
     die.simulate("click");
 
-    expect(die.html()).not.toContain("Die-locked");
+    expect(die.html()).toContain("Die-locked");
 });
 
 // test that list can't be clicked before initial roll
-it("does not allow list click before initial roll", function() {
-    let scoreRow = wrapper.find(".RuleRow-name").first();
-    scoreRow.simulate("click");
+// it("does not allow list click before initial roll", function() {
+//     let scoreRow = wrapper.find(".RuleRow-name").first();
+//     scoreRow.simulate("click");
 
-    expect(wrapper.state().scores.ones).toEqual(undefined);
-});
+//     expect(wrapper.state().scores.ones).toEqual(undefined);
+// });
