@@ -54,8 +54,6 @@ class Game extends Component {
   }
 
   toggleLocked(idx) {
-    // if roll count is 0 
-    // exit
     if (this.state.rollsLeft > 0 && this.state.dice[0]){
     // toggle whether idx is in locked or not
       this.setState(st => ({
