@@ -19,3 +19,13 @@ it("toggles lock when die is clicked", function () {
     die.simulate("click");
     expect(die.html()).toContain("Die-locked");
 });
+
+it("does not roll dice when out of rolls", function() {
+    wrapper.setState({ rollsLeft: 1 });
+    let btn = wrapper.find(".Game-reroll").first();
+    btn.simulate("click");
+    let die = wrapper.find(".Die").first();
+    die.simulate("click");
+    expect(wrapper.state().locked).toEqual([true, true, true, true, true]);
+    expect(die.html()).toContain("Die-locked");
+})
