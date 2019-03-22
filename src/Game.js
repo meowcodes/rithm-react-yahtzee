@@ -35,6 +35,7 @@ class Game extends Component {
     this.roll = this.roll.bind(this);
     this.doScore = this.doScore.bind(this);
     this.toggleLocked = this.toggleLocked.bind(this);
+    this.resetGame = this.resetGame.bind(this);
   }
 
   initialRoll() {
@@ -109,7 +110,31 @@ class Game extends Component {
     });
   }
 
-  
+  resetGame() {
+    this.setState({
+      dice: this.initialRoll(),
+      locked: Array(NUM_DICE).fill(false),
+      rollsLeft: NUM_ROLLS,
+      scores: {
+        ones: undefined,
+        twos: undefined,
+        threes: undefined,
+        fours: undefined,
+        fives: undefined,
+        sixes: undefined,
+        threeOfKind: undefined,
+        fourOfKind: undefined,
+        fullHouse: undefined,
+        smallStraight: undefined,
+        largeStraight: undefined,
+        yahtzee: undefined,
+        chance: undefined
+      },
+      upperTotal: 0,
+      lowerTotal: 0,
+      end: false
+    })
+  }
 
   render() {
     return (
