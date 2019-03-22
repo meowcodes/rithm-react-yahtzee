@@ -17,5 +17,5 @@ beforeEach(function(){
 it("toggles lock when die is clicked", function () {
     let die = wrapper.find(".Die").first();
     die.simulate("click");
-    expect(die.props().locked).toEqual(true);
+    expect(die.html()).toContain("Die-locked");
 });
