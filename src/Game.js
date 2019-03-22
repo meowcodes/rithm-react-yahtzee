@@ -49,7 +49,7 @@ class Game extends Component {
   toggleLocked(idx) {
     // if roll count is 0 
     // exit
-    if (this.state.rollsLeft > 0){
+    if (this.state.rollsLeft > 0 && this.state.dice[0]){
     // toggle whether idx is in locked or not
       this.setState(st => ({
         locked: [
@@ -62,13 +62,15 @@ class Game extends Component {
   }
 
   doScore(rulename, ruleFn) {
-    // evaluate this ruleFn with the dice and score this rulename
-    this.setState(st => ({
-      scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
-      rollsLeft: NUM_ROLLS,
-      locked: Array(NUM_DICE).fill(false),
-    }));
-    this.roll();
+    if(this.state.scores[rulename] === undefined && this.state.dice[0]){
+      // evaluate this ruleFn with the dice and score this rulename
+      this.setState(st => ({
+        scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
+        rollsLeft: NUM_ROLLS,
+        locked: Array(NUM_DICE).fill(false),
+      }));
+      this.roll();
+    }
   }
 
   render() {

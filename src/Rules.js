@@ -61,8 +61,8 @@ class SumDistro extends Rule {
 
 class FullHouse extends Rule {
   evalRoll = (dice) => {
-    // do any of the counts meet of exceed this distro?
-    return ((this.freq(dice).includes(2) && this.freq(dice).includes(3)) ? this.score : 0);
+    const includesTwoAndThree = this.freq(dice).includes(2) && this.freq(dice).includes(3);
+    return (includesTwoAndThree ? this.score : 0);
   }
 }
 
@@ -70,15 +70,15 @@ class FullHouse extends Rule {
 
 class SmallStraight extends Rule {
   evalRoll = (dice) => {
-    const d = new Set(dice);
+    const diceSet = new Set(dice);
+    // obj with possible wins and test against
 
-    // large straight must be 5 different dice & only one can be a 1 or a 6
-    if (d.size >= 4 && d.has(3) && d.has(4)) {
-      if (d.has(1) && d.has(2)){
+    if (diceSet.size >= 4 && diceSet.has(3) && diceSet.has(4)) {
+      if (diceSet.has(1) && diceSet.has(2)){
         return this.score;
-      } else if (d.has(2) && d.has(5)){
+      } else if (diceSet.has(2) && diceSet.has(5)){
         return this.score;
-      } else if (d.has(5) && d.has(6)){
+      } else if (diceSet.has(5) && diceSet.has(6)){
         return this.score;
       }
     }
@@ -94,6 +94,8 @@ class LargeStraight extends Rule {
     const d = new Set(dice);
 
     // large straight must be 5 different dice & only one can be a 1 or a 6
+
+    // make const
     return d.size === 5 && (!d.has(1) || !d.has(6)) ? this.score : 0;
   }
 }
