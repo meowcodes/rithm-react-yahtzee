@@ -10,7 +10,7 @@ class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dice: Array.from({ length: NUM_DICE }),
+      dice: this.initialRoll(),
       locked: Array(NUM_DICE).fill(false),
       rollsLeft: NUM_ROLLS,
       scores: {
@@ -32,6 +32,11 @@ class Game extends Component {
     this.roll = this.roll.bind(this);
     this.doScore = this.doScore.bind(this);
     this.toggleLocked = this.toggleLocked.bind(this);
+  }
+
+  initialRoll() {
+    let arr = Array.from({ length: NUM_DICE })
+    return arr.map(n => Math.ceil(Math.random() * 6));
   }
 
   roll(evt) {

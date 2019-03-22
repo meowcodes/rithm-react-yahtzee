@@ -6,11 +6,11 @@ exports[`matches snapshot 1`] = `
     <Dice
       dice={
         Array [
-          undefined,
-          undefined,
-          undefined,
-          undefined,
-          undefined,
+          2,
+          2,
+          2,
+          6,
+          5,
         ]
       }
       handleClick={[Function]}
@@ -32,55 +32,70 @@ exports[`matches snapshot 1`] = `
           idx={0}
           key="0"
           locked={false}
+          val={2}
         >
           <button
             className="Die"
             onClick={[Function]}
-          />
+          >
+            2
+          </button>
         </Die>
         <Die
           handleClick={[Function]}
           idx={1}
           key="1"
           locked={false}
+          val={2}
         >
           <button
             className="Die"
             onClick={[Function]}
-          />
+          >
+            2
+          </button>
         </Die>
         <Die
           handleClick={[Function]}
           idx={2}
           key="2"
           locked={false}
+          val={2}
         >
           <button
             className="Die"
             onClick={[Function]}
-          />
+          >
+            2
+          </button>
         </Die>
         <Die
           handleClick={[Function]}
           idx={3}
           key="3"
           locked={false}
+          val={6}
         >
           <button
             className="Die"
             onClick={[Function]}
-          />
+          >
+            6
+          </button>
         </Die>
         <Die
           handleClick={[Function]}
           idx={4}
           key="4"
           locked={false}
+          val={5}
         >
           <button
             className="Die"
             onClick={[Function]}
-          />
+          >
+            5
+          </button>
         </Die>
       </div>
     </Dice>
