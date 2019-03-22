@@ -7,3 +7,16 @@
 .Game-reroll:hover {
   background-color: pink;
 }
+
+.Game-flash {
+  background-color: rebeccapurple;
+  animation-name: colorChange;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes colorChange {
+  from {background-color: peachpuff;}
+  to {background-color: rebeccapurple;}
+}
