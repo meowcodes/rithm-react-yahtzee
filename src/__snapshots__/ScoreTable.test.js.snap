@@ -129,6 +129,11 @@ exports[`matches snapshot 1`] = `
               />
             </tr>
           </RuleRow>
+          <tr>
+            <td>
+              Upper Total: 
+            </td>
+          </tr>
         </tbody>
       </table>
     </section>
@@ -268,9 +273,18 @@ exports[`matches snapshot 1`] = `
               />
             </tr>
           </RuleRow>
+          <tr>
+            <td>
+              Lower Total: 
+            </td>
+          </tr>
         </tbody>
       </table>
     </section>
+    <div>
+      Total Score: 
+      NaN
+    </div>
   </div>
 </ScoreTable>
 `;

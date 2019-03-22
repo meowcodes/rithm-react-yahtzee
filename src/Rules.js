@@ -71,12 +71,16 @@ class FullHouse extends Rule {
 class SmallStraight extends Rule {
   evalRoll = (dice) => {
     const diceArr = Array.from(new Set(dice));
+    // arrow
     diceArr.sort(function(a,b) {return a-b});
     const diceStr = diceArr.join();
 
     // obj with possible wins and test against
+
+    // use set
     const winArr = ['1,2,3,4', '2,3,4,5', '3,4,5,6']
 
+    // use find
     for(let win of winArr){
       if (diceStr.includes(win)){
         return this.score;

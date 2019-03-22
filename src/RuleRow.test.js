@@ -14,3 +14,5 @@ it("matches snapshot", function () {
     let serialized = toJson(wrapper);
     expect(serialized).toMatchSnapshot();
 });
+
+// doScore passed in that runs when clicked - mock

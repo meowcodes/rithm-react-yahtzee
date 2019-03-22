@@ -14,3 +14,4 @@ it("matches snapshot", function () {
     let serialized = toJson(wrapper);
     expect(serialized).toMatchSnapshot();
 });
+

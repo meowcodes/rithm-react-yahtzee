@@ -34,7 +34,10 @@ exports[`matches snapshot 1`] = `
         className="Die Die-locked"
         onClick={[Function]}
       >
-        1
+        <img
+          className="Die-image"
+          src="die-1.svg"
+        />
       </button>
     </Die>
     <Die
@@ -47,7 +50,10 @@ exports[`matches snapshot 1`] = `
         className="Die"
         onClick={[Function]}
       >
-        2
+        <img
+          className="Die-image"
+          src="die-2.svg"
+        />
       </button>
     </Die>
     <Die
@@ -60,7 +66,10 @@ exports[`matches snapshot 1`] = `
         className="Die"
         onClick={[Function]}
       >
-        3
+        <img
+          className="Die-image"
+          src="die-3.svg"
+        />
       </button>
     </Die>
     <Die
@@ -73,7 +82,10 @@ exports[`matches snapshot 1`] = `
         className="Die"
         onClick={[Function]}
       >
-        4
+        <img
+          className="Die-image"
+          src="die-4.svg"
+        />
       </button>
     </Die>
     <Die
@@ -86,7 +98,10 @@ exports[`matches snapshot 1`] = `
         className="Die"
         onClick={[Function]}
       >
-        5
+        <img
+          className="Die-image"
+          src="die-5.svg"
+        />
       </button>
     </Die>
   </div>

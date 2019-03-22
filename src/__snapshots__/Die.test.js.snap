@@ -8,7 +8,10 @@ exports[`matches snapshot 1`] = `
     className="Die"
     onClick={[Function]}
   >
-    3
+    <img
+      className="Die-image"
+      src="die-3.svg"
+    />
   </button>
 </Die>
 `;
@@ -22,7 +25,10 @@ exports[`matches snapshot 2`] = `
     className="Die Die-locked"
     onClick={[Function]}
   >
-    3
+    <img
+      className="Die-image"
+      src="die-3.svg"
+    />
   </button>
 </Die>
 `;

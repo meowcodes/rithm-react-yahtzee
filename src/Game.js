@@ -12,7 +12,7 @@ class Game extends Component {
     this.state = {
       dice: this.initialRoll(),
       locked: Array(NUM_DICE).fill(false),
-      rollsLeft: NUM_ROLLS,
+      rollsLeft: NUM_ROLLS - 1,
       scores: {
         ones: undefined,
         twos: undefined,
@@ -39,7 +39,7 @@ class Game extends Component {
   }
 
   initialRoll() {
-    let arr = Array.from({ length: NUM_DICE })
+    let arr = Array.from({ length: NUM_DICE });
     return arr.map(n => Math.ceil(Math.random() * 6));
   }
 
