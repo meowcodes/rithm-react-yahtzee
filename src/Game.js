@@ -36,8 +36,10 @@ class Game extends Component {
   roll(evt) {
     // roll dice whose indexes are in reroll
     this.setState(st => ({
+      // generate random val if not locked
       dice: st.dice.map(
         (d, i) => st.locked[i] ? d : Math.ceil(Math.random() * 6)),
+      // locks all dice when out of rolls
       locked: st.rollsLeft > 1 ? st.locked : Array(NUM_DICE).fill(true),
       rollsLeft: st.rollsLeft - 1,
     }));
@@ -67,6 +69,7 @@ class Game extends Component {
   render() {
     return (
       <section>
+        {/* bind with arrow function toggleLocked */}
         <Dice dice={this.state.dice} locked={this.state.locked} handleClick={this.toggleLocked} />
         <button
           className="Game-reroll"

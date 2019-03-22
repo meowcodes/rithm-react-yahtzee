@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<ScoreTable
+  scores={
+    Object {
+      "ones": undefined,
+    }
+  }
+>
+  <div
+    className="ScoreTable"
+  >
+    <section
+      className="ScoreTable-section"
+    >
+      <h2>
+        Upper
+      </h2>
+      <table
+        cellSpacing="0"
+      >
+        <tbody>
+          <RuleRow
+            doScore={[Function]}
+            name="Ones"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Ones
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+          <RuleRow
+            doScore={[Function]}
+            name="Twos"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Twos
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+          <RuleRow
+            doScore={[Function]}
+            name="Threes"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Threes
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+          <RuleRow
+            doScore={[Function]}
+            name="Fours"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Fours
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+          <RuleRow
+            doScore={[Function]}
+            name="Fives"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Fives
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+          <RuleRow
+            doScore={[Function]}
+            name="Sixes"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Sixes
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+        </tbody>
+      </table>
+    </section>
+    <section
+      className="ScoreTable-section ScoreTable-section-lower"
+    >
+      <h2>
+        Lower
+      </h2>
+      <table
+        cellSpacing="0"
+      >
+        <tbody>
+          <RuleRow
+            doScore={[Function]}
+            name="Three of Kind"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Three of Kind
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+          <RuleRow
+            doScore={[Function]}
+            name="Four of Kind"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Four of Kind
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+          <RuleRow
+            doScore={[Function]}
+            name="Full House"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Full House
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+          <RuleRow
+            doScore={[Function]}
+            name="Small Straight"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Small Straight
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+          <RuleRow
+            doScore={[Function]}
+            name="Large Straight"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Large Straight
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+          <RuleRow
+            doScore={[Function]}
+            name="Yahtzee"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Yahtzee
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+          <RuleRow
+            doScore={[Function]}
+            name="Chance"
+          >
+            <tr
+              className="RuleRow RuleRow-active"
+              onClick={[Function]}
+            >
+              <td
+                className="RuleRow-name"
+              >
+                Chance
+              </td>
+              <td
+                className="RuleRow-score"
+              />
+            </tr>
+          </RuleRow>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</ScoreTable>
+`;

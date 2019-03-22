@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<RuleRow
+  name="Ones"
+  score={3}
+>
+  <tr
+    className="RuleRow RuleRow-active"
+  >
+    <td
+      className="RuleRow-name"
+    >
+      Ones
+    </td>
+    <td
+      className="RuleRow-score"
+    >
+      3
+    </td>
+  </tr>
+</RuleRow>
+`;
