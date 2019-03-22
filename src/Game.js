@@ -27,7 +27,9 @@ class Game extends Component {
         largeStraight: undefined,
         yahtzee: undefined,
         chance: undefined
-      }
+      },
+      upperTotal: 0,
+      lowerTotal: 0,
     };
     this.roll = this.roll.bind(this);
     this.doScore = this.doScore.bind(this);
@@ -66,6 +68,20 @@ class Game extends Component {
     } 
   }
 
+  updateTotals(){
+    let scores = this.state.scores;
+    let upperVals = [ scores.ones, scores.twos, scores.threes, scores.fours, scores.fives, scores.sixes ]
+    let lowerVals = [ scores.threeOfKind, scores.fourOfKind, scores.fullHouse, scores.smallStraight, 
+                      scores.largeStraight, scores.yahtzee, scores.chance ]
+
+    const reducer = (acc, currVal) => acc + currVal;
+    
+    let upperTotal = upperVals.filter(num => num !== undefined).reduce(reducer, 0);
+    let lowerTotal = lowerVals.filter(num => num !== undefined).reduce(reducer, 0);
+    
+    this.setState({ upperTotal, lowerTotal });
+  }
+
   doScore(rulename, ruleFn) {
     if(this.state.scores[rulename] === undefined && this.state.dice[0]){
       // evaluate this ruleFn with the dice and score this rulename
@@ -73,7 +89,7 @@ class Game extends Component {
         scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
         rollsLeft: NUM_ROLLS,
         locked: Array(NUM_DICE).fill(false),
-      }));
+      }), this.updateTotals);
       this.roll();
     }
   }
@@ -89,7 +105,7 @@ class Game extends Component {
           onClick={this.roll}>
           {this.state.rollsLeft} Rerolls Left
         </button>
-        <ScoreTable doScore={this.doScore} scores={this.state.scores} />
+        <ScoreTable doScore={this.doScore} scores={this.state.scores} upperTotal={this.state.upperTotal} lowerTotal={this.state.lowerTotal}/>
       </section >
     );
   }
