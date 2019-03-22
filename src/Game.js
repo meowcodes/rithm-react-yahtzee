@@ -30,6 +30,7 @@ class Game extends Component {
       },
       upperTotal: 0,
       lowerTotal: 0,
+      end: false
     };
     this.roll = this.roll.bind(this);
     this.doScore = this.doScore.bind(this);
@@ -42,15 +43,18 @@ class Game extends Component {
   }
 
   roll(evt) {
+
     // roll dice whose indexes are in reroll
-    this.setState(st => ({
-      // generate random val if not locked
-      dice: st.dice.map(
-        (d, i) => st.locked[i] ? d : Math.ceil(Math.random() * 6)),
-      // locks all dice when out of rolls
-      locked: st.rollsLeft > 1 ? st.locked : Array(NUM_DICE).fill(true),
-      rollsLeft: st.rollsLeft - 1,
-    }));
+    if(!this.state.end){
+      this.setState(st => ({
+        // generate random val if not locked
+        dice: st.dice.map(
+          (d, i) => st.locked[i] ? d : Math.ceil(Math.random() * 6)),
+        // locks all dice when out of rolls
+        locked: st.rollsLeft > 1 ? st.locked : Array(NUM_DICE).fill(true),
+        rollsLeft: st.rollsLeft - 1,
+      }));
+    }
   }
 
   toggleLocked(idx) {
@@ -87,10 +91,25 @@ class Game extends Component {
         scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
         rollsLeft: NUM_ROLLS,
         locked: Array(NUM_DICE).fill(false),
-      }), this.updateTotals);
+      }), function() {
+        this.updateTotals();
+
+        let array = Object.values(this.state.scores);
+        !array.includes(undefined) && this.endGame();
+      });
       this.roll();
     }
   }
+
+  endGame() {
+    this.setState({ 
+      end: true,
+      locked: Array(NUM_DICE).fill(true),
+      rollsLeft: 0
+    });
+  }
+
+  
 
   render() {
     return (
@@ -104,6 +123,11 @@ class Game extends Component {
           {this.state.rollsLeft} Rerolls Left
         </button>
         <ScoreTable doScore={this.doScore} scores={this.state.scores} upperTotal={this.state.upperTotal} lowerTotal={this.state.lowerTotal}/>
+        <button 
+          className={ this.state.end ? "Game-btn Game-flash" : "Game-btn" } 
+          onClick={ this.resetGame }>
+          Reset Game
+        </button>
       </section >
     );
   }

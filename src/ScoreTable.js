@@ -21,7 +21,7 @@ class ScoreTable extends Component {
               <RuleRow name="Fours" score={scores.fours} doScore={evt => doScore("fours", fours.evalRoll)} />
               <RuleRow name="Fives" score={scores.fives} doScore={evt => doScore("fives", fives.evalRoll)} />
               <RuleRow name="Sixes" score={scores.sixes} doScore={evt => doScore("sixes", sixes.evalRoll)} />
-              <div>Upper Total: { this.props.upperTotal } </div>
+              <tr><td>Upper Total: { this.props.upperTotal }</td></tr>
             </tbody>
           </table>
         </section>
@@ -36,7 +36,7 @@ class ScoreTable extends Component {
               <RuleRow name="Large Straight" score={scores.largeStraight} doScore={evt => doScore("largeStraight", largeStraight.evalRoll)} />
               <RuleRow name="Yahtzee" score={scores.yahtzee} doScore={evt => doScore("yahtzee", yahtzee.evalRoll)} />
               <RuleRow name="Chance" score={scores.chance} doScore={evt => doScore("chance", chance.evalRoll)} />
-              <div>Lower Total: { this.props.lowerTotal } </div>
+              <tr><td>Lower Total: { this.props.lowerTotal }</td></tr>
             </tbody>
           </table>
         </section>
